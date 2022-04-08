@@ -1,6 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const router = require('./routes/tasks');
+const homerouter= require ('./routes/index');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 
 app.use('/tasks', router); 
+app.use('/', homerouter); 
 
 
 // SERVER RUNNING

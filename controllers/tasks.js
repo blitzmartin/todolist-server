@@ -8,7 +8,7 @@ class taskConstructor {
 let items = [];
 
 const newTaskGet = function (req, res) {
-    res.render('index', { items: items });
+    res.render('tasks', { items: items });
 };
 
 
