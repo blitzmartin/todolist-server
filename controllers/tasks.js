@@ -3,8 +3,7 @@ class taskConstructor {
       this.taskContent = taskContent;
       this.id = id;
     }
-  }
-  
+}
 
 let items = [];
 
