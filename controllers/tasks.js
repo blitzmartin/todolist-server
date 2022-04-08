@@ -21,4 +21,9 @@ const newTaskCreate = function (req, res) {
     res.redirect('/tasks');
 };
 
-module.exports = { newTaskGet, newTaskCreate };
+const removeTasks = function(req, res) {
+    items = [];
+    res.redirect("/tasks");
+};
+
+module.exports = { newTaskGet, newTaskCreate, removeTasks };

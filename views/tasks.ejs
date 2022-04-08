@@ -6,15 +6,28 @@
         <input class="todo-input" id="prompt" type="text" name="newItem">
         <button class="todo-button" type="submit" name="button">+</button>
     </form>
-    
+
     <div class="todo-container">
         <ul class="todo-list">
-                <% for (let i=0; i < items.length; i++){ %>
-                    <li class="todo todo-item">
-                        <%= items[i].taskContent %> 
-                    </li>
-                <% } %>
-        </ul>
+            <% for (let i=0; i < items.length; i++){ %>
+                <div class="todo">
+                    <label for="taskCheck">
+                        
+                        <li class="todo todo-item">
+                            <input type="checkbox" id="taskCheck">
+                            <span>
+                                <%= items[i].taskContent %>
+                            </span>
+                            
+                        </li>
+                </div>
+            <% } %>
     </div>
 
-<%- include ('footer'); %>
+    </ul>
+    </div>
+    <form action="/tasks"method="post">
+        <button style="font-size: 1rem;" type="submit">Remove checked</button>
+    </form>
+
+    <%- include ('footer'); %>
