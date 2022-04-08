@@ -9,18 +9,25 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+class taskConstructor {
+  constructor(taskContent, id) {
+    this.taskContent = taskContent;
+    this.id = id;
+  }
+}
+
 let items = [];
 
 app.get('/tasks', (req, res) => {
-  items = fs.readFileSync('todolist.txt').toString().split("\n");
-  res.render('index', { newListItems: items });
+  res.render('index', { items: items });
 });
 
 app.post('/tasks', (req, res) => {
-  items.push(req.body.newItem);
-  fs.appendFile('./todolist.txt', items[items.length - 1] + "\n", 'utf8', function (err) {
-    if (err) return console.log(err);
-  });
+  let taskContent = req.body.newItem;
+  let id = Date.now() + Math.floor(Math.random());
+  const newTask = new taskConstructor(taskContent, id);
+  items.push(newTask);
+  console.log(JSON.stringify(items));
   res.redirect('/tasks');
 });
 

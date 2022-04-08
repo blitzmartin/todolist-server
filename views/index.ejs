@@ -20,9 +20,9 @@
     
     <div class="todo-container">
         <ul class="todo-list">
-                <% for (let i=0; i < newListItems.length; i++){ %>
+                <% for (let i=0; i < items.length; i++){ %>
                     <li class="todo todo-item">
-                        <%= newListItems[i] %> 
+                        <%= items[i].taskContent %> 
                     </li>
                 <% } %>
         </ul>
