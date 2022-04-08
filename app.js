@@ -1,6 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
-const fs = require('fs');
+const router = require('./routes/tasks');
 
 const app = express();
 
@@ -9,27 +9,8 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-class taskConstructor {
-  constructor(taskContent, id) {
-    this.taskContent = taskContent;
-    this.id = id;
-  }
-}
 
-let items = [];
-
-app.get('/tasks', (req, res) => {
-  res.render('index', { items: items });
-});
-
-app.post('/tasks', (req, res) => {
-  let taskContent = req.body.newItem;
-  let id = Date.now() + Math.floor(Math.random());
-  const newTask = new taskConstructor(taskContent, id);
-  items.push(newTask);
-  console.log(JSON.stringify(items));
-  res.redirect('/tasks');
-});
+app.use('/tasks', router); 
 
 
 // SERVER RUNNING
