@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 app.use('/tasks', tasksRouter); 
-app.use('/', homeRouter); 
+app.use('/', homeRouter);
 
 
 // SERVER RUNNING

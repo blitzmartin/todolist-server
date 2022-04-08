@@ -11,8 +11,7 @@
         <ul class="todo-list">
             <% for (let i=0; i < items.length; i++){ %>
                 <div class="todo">
-                    <label for="taskCheck">
-                        
+                    <label for="taskCheck">                        
                         <li class="todo todo-item">
                             <input type="checkbox" id="taskCheck">
                             <span>
@@ -26,8 +25,8 @@
     </ul>
     <br>
     </div>
-    <form action="/tasks" method="post">
-        <button style="font-size: 1rem;" type="submit">Empty list</button>
+    <form action="/tasks/remove" method="post">
+        <button style="font-size: 1rem;" formaction="/tasks/remove" type="submit">Empty list</button>
     </form>
 
     <%- include ('footer'); %>

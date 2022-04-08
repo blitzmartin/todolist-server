@@ -21,9 +21,9 @@ const newTaskCreate = function (req, res) {
     res.redirect('/tasks');
 };
 
-const removeTasks = function(req, res) {
+const removeTasks = function (req, res) {
     items.splice(0, items.length);
-    res.redirect("/tasks");
+    res.redirect('/tasks');
 };
 
-module.exports = { newTaskGet, newTaskCreate, removeTasks };
+module.exports = { newTaskGet, newTaskCreate, removeTasks};
