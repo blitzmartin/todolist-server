@@ -1,7 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
-const router = require('./routes/tasks');
-const homerouter= require ('./routes/index');
+const tasksRouter = require('./routes/tasks');
+const homeRouter= require ('./routes/index');
 
 const app = express();
 
@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.use('/tasks', router); 
-app.use('/', homerouter); 
+app.use('/tasks', tasksRouter); 
+app.use('/', homeRouter); 
 
 
 // SERVER RUNNING

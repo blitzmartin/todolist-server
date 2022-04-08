@@ -22,7 +22,7 @@ const newTaskCreate = function (req, res) {
 };
 
 const removeTasks = function(req, res) {
-    items = [];
+    items.splice(0, items.length);
     res.redirect("/tasks");
 };
 
