@@ -1,6 +1,6 @@
 :root {
     --col-light: rgb(247, 253, 251);
-    --col-dark: rgb(44, 44, 44);
+    --col-dark: #343A40;
     --col-accent: #f0e224;
     --col-gradient: linear-gradient(120deg, #8397b6, #294aa7);
     --font-primary: Helvetica, sans-serif;
@@ -81,6 +81,19 @@ input[type=checkbox]:checked~span{
     text-decoration: line-through;
 }
 
+i {
+    position: absolute;
+    right: 15px;
+}
+
+.nav-anchor {
+    color: var(--col-light);
+}
+.nav-anchor:hover {
+    color: var(--col-accent);
+    font-weight: bold;
+    text-decoration: none;
+}
 
 .todo-container {
     display: flex;
@@ -99,7 +112,7 @@ input[type=checkbox]:checked~span{
     border: none;
     color: var(--col-accent);
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -120,34 +133,10 @@ input[type=checkbox]:checked~span{
     cursor: pointer;
 }
 
-i {
-    position: absolute;
-    right: 15px;
+.emptyBtn {
+    font-size: 1rem;
+    padding: 0.5rem;
 }
-
-/* added */
-
-
-.footer-padding {
-	padding-bottom: 60px;
-}
-
-.footer {
-	position: absolute;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: rgb(44, 44, 44);
-    color: #fff;
-}
-
-.footer p {
-	margin-top: 25px;
-	font-size: 12px;
-    color: white;
-}
-
 
 
 /* Responsive Design for small screens */
