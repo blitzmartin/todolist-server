@@ -15,11 +15,19 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: var(--font-primary);
     padding: 0 20vw;
     font-size: 1rem;
-    background-image: var(--col-light);
+    background-image: linear-gradient(#deeffb, #ddefff);
+    display: table; 
+    height: 100%;
+    width: 100%;
 }
 
 h1 {
@@ -77,7 +85,7 @@ input[type=checkbox]:checked {
     filter: invert(100%) hue-rotate(18deg) brightness(1.5);
 }
 
-input[type=checkbox]:checked~span{
+input[type=checkbox]:checked~span {
     text-decoration: line-through;
 }
 
@@ -89,6 +97,7 @@ i {
 .nav-anchor {
     color: var(--col-light);
 }
+
 .nav-anchor:hover {
     color: var(--col-accent);
     font-weight: bold;
