@@ -1,8 +1,20 @@
+// Require modules
 const express = require('express');
 const ejs = require('ejs');
-const tasksRouter = require('./routes/tasks');
+const mongoose = require('mongoose');
+
+// require Routes
+const tasksRouter = require('./routes/tasksRoutes');
 const homeRouter= require ('./routes/index');
 
+// connect to MongoDB server on port 27017 and database
+const DB_SERVER = "mongodb://localhost:27017"
+const database = "simpleUserDB";
+mongoose.connect(`${DB_SERVER}/${database}`)
+.then(()=> console.log("Connected to DB server"))
+.catch((err) => console.log(err));
+
+// create server
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -10,7 +22,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+// use routes
 app.use('/tasks', tasksRouter); 
 app.use('/', homeRouter);
 

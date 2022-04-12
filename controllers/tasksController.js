@@ -1,3 +1,5 @@
+const taskModel = require("../models/tasksModel")
+
 class taskConstructor {
     constructor(taskContent, id) {
       this.taskContent = taskContent;
