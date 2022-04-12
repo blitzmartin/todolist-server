@@ -1,7 +1,6 @@
 const taskModel = require("../models/tasksModel")
 
 //CRUD operations
-let items = [];
 
 //CREATE
 async function newTaskCreate (req, res) {
@@ -14,18 +13,18 @@ async function newTaskCreate (req, res) {
 };
 
 //READ
-async function newTaskGet (req, res) {
+function newTaskGet (req, res) {
     taskModel.find()
-    .then(items => {
-        console.log(`Updated list:\n ${items}`);
-        res.render('tasks', { items: items });
+    .then(data => {
+        console.log(`Updated list:\n ${data}`);
+        res.render('tasks', { items: data });
     })
 };
 
 //UPDATE
 
 //DELETE (all)
-async function removeTasks (req, res) {
+function removeTasks (req, res) {
     taskModel.deleteMany({})
     .then(()=>{
         res.redirect('/tasks');
