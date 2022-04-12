@@ -9,9 +9,9 @@ const homeRouter= require ('./routes/index');
 
 // connect to MongoDB server on port 27017 and database
 const DB_SERVER = "mongodb://localhost:27017"
-const database = "simpleUserDB";
+const database = "tasksDB";
 mongoose.connect(`${DB_SERVER}/${database}`)
-.then(()=> console.log("Connected to DB server..."))
+.then(()=> console.log(`Connected to DB server... Reading: ${database}`))
 .catch((err) => console.log(err));
 
 // create server

@@ -1,31 +1,38 @@
 const taskModel = require("../models/tasksModel")
 
-class taskConstructor {
-    constructor(taskContent, id) {
-      this.taskContent = taskContent;
-      this.id = id;
-    }
-}
-
+//CRUD operations
 let items = [];
 
-const newTaskGet = function (req, res) {
-    res.render('tasks', { items: items });
+//CREATE
+async function newTaskCreate (req, res) {
+    try{
+        const newTask = await taskModel.create({taskName: req.body.newItem});
+        res.redirect('/tasks');
+    } catch(err) {
+        console.log(err)
+    }
 };
 
-
-const newTaskCreate = function (req, res) {
-    let taskContent = req.body.newItem;
-    let id = Date.now() + Math.floor(Math.random());
-    const newTask = new taskConstructor(taskContent, id);
-    items.push(newTask);
-    console.log(JSON.stringify(items));
-    res.redirect('/tasks');
+//READ
+async function newTaskGet (req, res) {
+    taskModel.find()
+    .then(items => {
+        console.log(`Updated list:\n ${items}`);
+        res.render('tasks', { items: items });
+    })
 };
 
-const removeTasks = function (req, res) {
-    items.splice(0, items.length);
-    res.redirect('/tasks');
+//UPDATE
+
+//DELETE (all)
+async function removeTasks (req, res) {
+    taskModel.deleteMany({})
+    .then(()=>{
+        res.redirect('/tasks');
+    })
+    .catch((err) => {
+        console.log(err);
+    })   
 };
 
 module.exports = { newTaskGet, newTaskCreate, removeTasks};
