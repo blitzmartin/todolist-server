@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 // require Routes
 const tasksRouter = require('./routes/tasksRoutes');
-const homeRouter= require ('./routes/index');
+const homeRouter= require ('./routes/indexRoutes');
 
 // connect to MongoDB server on port 27017 and database
 const DB_SERVER = "mongodb://localhost:27017"
