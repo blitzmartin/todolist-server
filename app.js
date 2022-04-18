@@ -7,12 +7,12 @@ const mongoose = require('mongoose');
 const tasksRouter = require('./routes/tasksRoutes');
 const homeRouter= require ('./routes/indexRoutes');
 
-// connect to MongoDB server on port 27017 and database
-const DB_SERVER = "mongodb://localhost:27017"
-const database = "tasksDB";
-mongoose.connect(`${DB_SERVER}/${database}`)
-.then(()=> console.log(`Connected to DB server... Reading: ${database}`))
+// Connect to MongoDB server on port 27017 and database
+dotenv.config();
+mongoose.connect(process.env.DB_SERVER)
+.then(() => console.log('Connected to DB server...'))
 .catch((err) => console.log(err));
+
 
 // create server
 const app = express();
