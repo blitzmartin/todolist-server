@@ -24,7 +24,7 @@ function newTaskGet (req, res) {
 //UPDATE
 
 //DELETE (all)
-function removeTasks (req, res) {
+function removeAllTasks (req, res) {
     taskModel.deleteMany({})
     .then(()=>{
         res.redirect('/tasks');
@@ -34,16 +34,17 @@ function removeTasks (req, res) {
     })   
 };
 
+
 function removeOneTask (req, res) {
     const checkedItemId = req.body.checkbox;
     taskModel.findByIdAndRemove(checkedItemId, function(err){
         if(!err) {
-            console.log("Successfully deleted checked item.");
             res.redirect('/tasks');
         }
     })
 }
 
 
+module.exports = { newTaskGet, newTaskCreate, removeAllTasks, removeOneTask};
 
-module.exports = { newTaskGet, newTaskCreate, removeTasks, removeOneTask};
+
