@@ -85,14 +85,10 @@ input[type=checkbox]:checked {
     filter: invert(100%) hue-rotate(18deg) brightness(1.5);
 }
 
-input[type=checkbox]:checked~span {
+input[type=checkbox]:checked~p {
     text-decoration: line-through;
 }
 
-i {
-    position: absolute;
-    right: 15px;
-}
 
 .nav-anchor {
     color: var(--col-light);

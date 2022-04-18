@@ -10,11 +10,12 @@
     <div class="todo-container">
         <ul class="todo-list">
             <% for (let i=0; i < items.length; i++){ %>
-                <form action="/tasks/delete" method="post">
-                    <div class="item">
-                        <input type="checkbox" name="checkbox" value="<%= items[i]._id %>"
-                            onChange="this.form.submit()">
-                        <p><%= items[i].taskName%></p>
+                <form class="todo" action="/tasks/delete" method="post">
+                    <div class="todo-item">
+                        <label for="checkbox">
+                            <input  id="checkbox" type="checkbox" name="checkbox" value="<%= items[i]._id %>" onChange="this.form.submit()">
+                            <p><%=items[i].taskName%></p>
+                        </label>
                     </div>
                 </form>
             <% } %>

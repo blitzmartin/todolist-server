@@ -39,7 +39,6 @@ function removeOneTask (req, res) {
     const checkedItemId = req.body.checkbox;
     taskModel.findByIdAndRemove(checkedItemId, function(err){
         if(!err) {
-            console.log("Successfully deleted checked item.");
             res.redirect('/tasks');
         }
     })
