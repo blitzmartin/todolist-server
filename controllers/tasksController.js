@@ -24,7 +24,7 @@ function newTaskGet (req, res) {
 //UPDATE
 
 //DELETE (all)
-function removeTasks (req, res) {
+function removeAllTasks (req, res) {
     taskModel.deleteMany({})
     .then(()=>{
         res.redirect('/tasks');
@@ -46,4 +46,4 @@ function removeOneTask (req, res) {
 }
 
 
-module.exports = { newTaskGet, newTaskCreate, removeTasks, removeOneTask};
+module.exports = { newTaskGet, newTaskCreate, removeAllTasks, removeOneTask};
