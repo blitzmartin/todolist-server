@@ -78,8 +78,13 @@ form button:hover {
 }
 
 input[type=checkbox] {
-    margin-right: 1rem;
+    margin-right: 0.2rem;
+    display: inline-block;
+    width: 3rem;
+    vertical-align: center;
 }
+
+
 
 input[type=checkbox]:checked {
     filter: invert(100%) hue-rotate(18deg) brightness(1.5);
@@ -89,6 +94,12 @@ input[type=checkbox]:checked~p {
     text-decoration: line-through;
 }
 
+.label-text {
+    display: inline-block;
+    vertical-align: center;
+    width: 30rem;
+    word-break: keep-all; 
+}
 
 .nav-anchor {
     color: var(--col-light);
@@ -111,10 +122,11 @@ input[type=checkbox]:checked~p {
 }
 
 .todo {
-    margin: 0.5rem 0;
+    margin: 0.2rem 0;
     background-color: var(--col-dark);
     border-radius: 10px;
     border: none;
+    width: 100%;
     color: var(--col-accent);
     font-size: 1.5rem;
     padding: 0.2rem;
@@ -128,20 +140,6 @@ input[type=checkbox]:checked~p {
     font-size: 1.5rem;
 }
 
-.listBtn {
-    position: absolute;
-    right: 10px;
-    top: 20px;
-}
-
-.listBtn:hover {
-    cursor: pointer;
-}
-
-.emptyBtn {
-    font-size: 1rem;
-    padding: 0.5rem;
-}
 
 
 /* Responsive Design for small screens */
