@@ -16,7 +16,7 @@ async function newTaskCreate (req, res) {
 function newTaskGet (req, res) {
     taskModel.find()
     .then(data => {
-        console.log(`Updated list:\n ${data}`);
+        /* console.log(`Updated list:\n ${data}`); */
         res.render('tasks', { items: data });
     })
 };
@@ -34,5 +34,16 @@ function removeTasks (req, res) {
     })   
 };
 
+function removeOneTask (req, res) {
+    const checkedItemId = req.body.checkbox;
+    taskModel.findByIdAndRemove(checkedItemId, function(err){
+        if(!err) {
+            console.log("Successfully deleted checked item.");
+            res.redirect('/tasks');
+        }
+    })
+}
 
-module.exports = { newTaskGet, newTaskCreate, removeTasks};
+
+
+module.exports = { newTaskGet, newTaskCreate, removeTasks, removeOneTask};

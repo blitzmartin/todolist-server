@@ -10,24 +10,20 @@
     <div class="todo-container">
         <ul class="todo-list">
             <% for (let i=0; i < items.length; i++){ %>
-
                     <div class="todo">
                         <label for="taskCheck">                        
                             <li class="todo todo-item">
-                                <input type="checkbox" id="taskCheck">
-                                <span>
-                                    <%= items[i].taskName %>
-                                </span>
+                                <input type="checkbox" id="taskCheck" name="checkbox">
+                                <span><%= items[i].taskName %></span>
                             </li>
-                    </div>
-        
+                    </div>             
             <% } %>
+        </ul>
     </div>
-    </ul>
+ 
     <br>
-    </div>
-    <form action="/tasks/remove" method="post">
-        <button class="emptyBtn" formaction="/tasks/remove" type="submit">Empty 🗑</button>
+    <form action="/tasks/delete" method="post">
+        <button class="emptyBtn" formaction="/tasks/delete" type="submit">Empty 🗑</button>
     </form>
 
     <%- include ('footer'); %>
