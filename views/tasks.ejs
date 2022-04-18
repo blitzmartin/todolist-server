@@ -10,16 +10,18 @@
     <div class="todo-container">
         <ul class="todo-list">
             <% for (let i=0; i < items.length; i++){ %>
-                <div class="todo">
-                    <label for="taskCheck">                        
-                        <li class="todo todo-item">
-                            <input type="checkbox" id="taskCheck">
-                            <span>
-                                <%= items[i].taskContent %>
-                            </span>
-                            
-                        </li>
-                </div>
+
+                    <div class="todo">
+                        <label for="taskCheck">                        
+                            <li class="todo todo-item">
+                                <input type="checkbox" id="taskCheck">
+                                <span>
+                                    <%= items[i].taskName %>
+                                </span>
+                                
+                            </li>
+                    </div>
+        
             <% } %>
     </div>
     </ul>
