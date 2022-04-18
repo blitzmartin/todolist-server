@@ -2,6 +2,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 // require Routes
 const tasksRouter = require('./routes/tasksRoutes');
